@@ -32,16 +32,21 @@
     <table class="table table-hover table-striped master-list">
       <thead>
         <tr>
-          <th>Firstname</th>
+          <th>Scholarship Title</th>
           <th>Lastname</th>
           <th>Email</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat"scholarship in scholarships">
+        <tr ng-repeat-start="scholarship in scholarships">
           <td>{{scholarship["Scholarship/Fellowship Title"]}}</td>
           <td>Doe</td>
           <td>john@example.com</td>
+        </tr>
+        <tr ng-repeat-end ng-show="">
+          <td colspan="42">s;dlkfja;sldkjfa;slkdjf;alksdjf;alksjdf;lkajsd;flkajs;dlfkja;sld
+            kfja;lskdjfa;lksdjf;alksdjf;laksjdf;lakjsdf;lkajsd;lfkjas;dlkfja;slkdjf;alskdjf;laksjdf;laksjdf;laksjdf;lkasjdf;lk
+            ajsd;flkajsd;lfkjas;dlkfja;sldkjf;alskdjf;alskdjf;alksjdf;lkasjd;flkajsd;lkfja;sdlkfja;sldkfj;alskdfj</td>
         </tr>
       </tbody>
     </table>
