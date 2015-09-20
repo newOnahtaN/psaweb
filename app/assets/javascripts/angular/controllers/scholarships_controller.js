@@ -3,10 +3,10 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   console.log("thing");
 
   $http.get('/MasterList').success(function(response) {
-    console.log(response);
     $scope.scholarships = response;
-    console.log($scope.scholarships.length)
-
+    $scope.expansions = Array.apply(null, Array($scope.scholarships.length)).map(Boolean.prototype.valueOf,false);
+    console.log($scope.scholarships);
+    console.log($scope.expansions);
   });
 
 

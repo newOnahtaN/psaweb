@@ -22,6 +22,8 @@ gem 'angularjs-rails'
 gem 'twitter-bootstrap-rails'
 gem 'certified'
 gem 'pry-nav', group: [:development, :test]
+gem 'google-api-client'
+gem 'google-drive'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

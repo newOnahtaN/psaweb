@@ -38,12 +38,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat-start="scholarship in scholarships">
+        <tr ng-repeat-start="scholarship in scholarships track by $index" ng-click="expansions[$index] = !expansions[$index]">
           <td>{{scholarship["Scholarship/Fellowship Title"]}}</td>
           <td>Doe</td>
           <td>john@example.com</td>
         </tr>
-        <tr ng-repeat-end ng-show="">
+        <tr class="expansion" ng-repeat-end ng-show="expansions[$index]">
           <td colspan="42">s;dlkfja;sldkjfa;slkdjf;alksdjf;alksjdf;lkajsd;flkajs;dlfkja;sld
             kfja;lskdjfa;lksdjf;alksdjf;laksjdf;lakjsdf;lkajsd;lfkjas;dlkfja;slkdjf;alskdjf;laksjdf;laksjdf;laksjdf;lkasjdf;lk
             ajsd;flkajsd;lfkjas;dlkfja;sldkjf;alskdjf;alskdjf;alksjdf;lkasjd;flkajsd;lkfja;sdlkfja;sldkfj;alskdfj</td>
