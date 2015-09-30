@@ -51,48 +51,19 @@
         <div class="row first-row">
           <div class="col-sm-3">
             <h5>Academic Status</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Freshman</option>
-              <option>Sophomore</option>
-              <option>Junior</option>
-              <option>Senior</option>
-              <option>Grad Student</option>
-              <option>Alumni</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.studentTypes" title="Any" ng-options="type as type for type in studentTypes" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>Area of Study</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Sciences</option>
-              <option>Social Sciences</option>
-              <option>Humanities</option>
-              <option>Education</option>
-              <option>Math and Technology</option>
-              <option>Health Disciplines</option>
-              <option>Law</option>
-              <option>Fine and Performing Arts</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.areasOfStudy" title="Any" ng-options="area as area for area in areasOfStudy" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>Scholarship Purpose</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Graduate/PostGrad Study</option>
-              <option>International Study, Research or Internships</option>
-              <option>Public Service</option>
-              <option>Undergraduate Tuition</option>
-              <option>Job Placement/Funding</option>
-              <option>Language</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.purposes" title="Any" ng-options="purpose as purpose for purpose in purposes" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>World Region</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Europe/Australia</option>
-              <option>United States</option>
-              <option>Americas (not U.S.)</option>
-              <option>Africa</option>
-              <option>Asia</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.regions" title="Any" ng-options="region as region for region in regions" multiple></select>
           </div>
         </div>
       </div>
@@ -101,34 +72,19 @@
         <div class="row second-row">
           <div class="col-sm-3">
             <h5>Scholarship Duration</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Spring</option>
-              <option>Summer</option>
-              <option>Fall</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.seasons" ng-change="console.log('thing')" title="Any" ng-options="season as season for season in seasons" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>Gender</h5>
-            <select class="selectpicker" title="Any" multiple>
-              <option>Male</option>
-              <option>Female</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.genders" title="Any" ng-options="gender as gender for gender in genders" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>US Citizenship</h5>
-            <select class="selectpicker">
-              <option>Either</option>
-              <option>Required</option>
-              <option>Not Required</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.citizenships" title="Either" ng-options="cit as cit for cit in citizenships" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>Financial Need</h5>
-            <select class="selectpicker">
-              <option>Either</option>
-              <option>Is required</option>
-              <option>Is not required</option>
-            </select>
+            <select class="selectpicker" ng-model="filters.financialNeeds" title="Either" ng-options="fin as fin for fin in financialNeeds" multiple></select>
           </div>
         </div>
       </div>
