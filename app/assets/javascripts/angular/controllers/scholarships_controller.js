@@ -1,14 +1,29 @@
 angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
-  console.log("thing");
+  $scope.searchType = "Advanced"
 
   $http.get('/MasterList').success(function(response) {
-    $scope.scholarships = response;
-    $scope.expansions = Array.apply(null, Array($scope.scholarships.length)).map(Boolean.prototype.valueOf,false);
+    master_list = refineMasterList(response)
+    $scope.scholarships = master_list;
     console.log($scope.scholarships);
-    console.log($scope.expansions);
   });
 
+  function refineMasterList(list) {
+    for(i = 0; i < list.length; i++){
+        list[i].title = list[i]["Scholarship/Fellowship Title"];
+        list[i].link = list[i]["External Website Link"];
+        delete list[i]["Scholarship/Fellowship Title"];
+        delete list[i]["External Website Link"];
+    }
+    return list;
+  }
 
+  $scope.toggleSearchType = function () {
+    if ($scope.searchType === "Advanced"){
+      $scope.searchType = "Basic"
+    } else {
+      $scope.searchType = "Advanced"
+    }
+  }
 
 }]);

@@ -27,9 +27,12 @@
   background-color: #B9975B;
 }
 
+.header-divider-bottom {
+  margin-bottom: 40px;
+}
+
 .wm-logo {
   margin-top: 58px;
-  // float: left;
 }
 
 .psa-logo {
@@ -46,13 +49,36 @@
   margin-bottom: 30px;
 }
 
-.master-list {
+.search-button {
+  background:none !important;
+}
+
+.first-row {
   margin-top: 40px;
+}
+
+.second-row {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.bootstrap-select {
+  width: 100% !important;
+}
+
+.master-list {
   margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+.scholarship:hover {
+  cursor: pointer;
+  background-color: #f2f2f2 !important;
 }
 
 .expansion{
-  height: 200px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 .table td, .table th {
@@ -61,6 +87,15 @@
 
 table.table.table-condensed {
   border: 1px solid black;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="search"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(17, 87, 64, 0.8) !important;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(17, 87, 64, 0.6) !important;
+  outline: 0 none;
 }
 
 .footer {
