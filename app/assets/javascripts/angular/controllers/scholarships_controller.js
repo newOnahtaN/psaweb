@@ -14,7 +14,8 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
 
   $http.get('/MasterList').success(function(response) {
     master_list = refineMasterList(response)
-    $scope.scholarships = master_list;
+    $scope.originalList = master_list;
+    $scope.scholarships = angular.copy(master_list);
     console.log($scope.scholarships);
   });
 
@@ -37,7 +38,32 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   }
 
   $scope.$watch("filters", function(newValue, oldValue) {
-    console.log("thing");
+    filters = allFilters();
+    scholarships = angular.copy($scope.originalList)
+    i = scholarships.length
+    while (i--) {
+      scholarship = scholarships[i];
+      for (j in filters){
+        filter = filters[j];
+        if (!scholarship[filter]) {
+          scholarships.splice(i,1);
+          console.log(scholarship.title);
+          console.log(filter);
+          console.log(scholarship[filter])
+        }
+      }
+    }
+    $scope.scholarships = scholarships;
   }, true);
+
+  allFilters = function () {
+    temp = []
+    for (var filterType in $scope.filters) {
+      if ($scope.filters.hasOwnProperty(filterType)) {
+        temp = temp.concat($scope.filters[filterType]);
+      }
+    }
+    return temp;
+  }
 
 }]);
