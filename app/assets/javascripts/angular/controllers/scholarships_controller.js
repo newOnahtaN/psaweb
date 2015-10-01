@@ -37,19 +37,21 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   }
 
   $scope.$watch("filters", function(newValue, oldValue) {
-    filters = allFilters();
-    scholarships = angular.copy($scope.originalList)
-    i = scholarships.length
-    while (i--) {
-      scholarship = scholarships[i];
-      for (j in filters){
-        filter = filters[j];
-        if (!scholarship[filter]) {
-          scholarships.splice(i,1);
+    if ($scope.originalList) {
+      filters = allFilters();
+      scholarships = angular.copy($scope.originalList)
+      i = scholarships.length
+      while (i--) {
+        scholarship = scholarships[i];
+        for (j in filters){
+          filter = filters[j];
+          if (!scholarship[filter]) {
+            scholarships.splice(i,1);
+          }
         }
       }
+      $scope.scholarships = scholarships;
     }
-    $scope.scholarships = scholarships;
   }, true);
 
   allFilters = function () {
