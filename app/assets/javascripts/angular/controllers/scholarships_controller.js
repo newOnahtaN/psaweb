@@ -16,7 +16,6 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
     master_list = refineMasterList(response)
     $scope.originalList = master_list;
     $scope.scholarships = angular.copy(master_list);
-    console.log($scope.scholarships);
   });
 
   function refineMasterList(list) {
@@ -47,9 +46,6 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
         filter = filters[j];
         if (!scholarship[filter]) {
           scholarships.splice(i,1);
-          console.log(scholarship.title);
-          console.log(filter);
-          console.log(scholarship[filter])
         }
       }
     }
