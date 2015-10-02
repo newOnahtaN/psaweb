@@ -90,8 +90,12 @@
       </div>
     </div>
 
+    <div ng-hide="scholarships">
+      <%= image_tag("ring.svg", alt: "Loading Animation", width: "15%", class: "loading-ring") %>
+    </div>
+
     <div class="container">
-      <table class="table table-striped master-list">
+      <table class="table table-striped master-list" ng-show="scholarships">
         <thead>
           <tr>
             <th><h3>Scholarship Title</h3></th>
