@@ -1,4 +1,4 @@
-angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
+angular.module("PSAScholarships", ['angular.filter','pasvaz.bindonce']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
   $scope.searchType = "Advanced"
   $scope.filters = {studentTypes: [], areasOfStudy: [], purposes: [], regions: [], seasons: [], genders: [], citizenships: [], financialNeeds: []};
@@ -7,7 +7,7 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   $scope.purposes = ['Graduate/Postgrad Study', 'International Study, Research, or Internships', 'Public Service', 'Undergraduate Tuition', 'Job Placement/Funding', 'Language'];
   $scope.regions = ['Europe/Australia', 'United States', 'Americas (not U.S.)', 'Africa', 'Asia'];
   $scope.seasons = ['Spring', 'Summer', 'Fall'];
-  $scope.genders = ['Open to Men', 'Open to Women'];
+  $scope.genders = ['Open to Men and Women', 'Only open to Women'];
   $scope.citizenships = ["Citizenship required", "Citizenship not required"];
   $scope.financialNeeds = ["Financial need required", "Financial need not required"]
 
@@ -15,7 +15,6 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   $http.get('/MasterList').success(function(response) {
     master_list = refineMasterList(response)
     $scope.originalList = master_list;
-    console.log(master_list);
     $scope.scholarships = angular.copy(master_list);
   });
 
@@ -28,7 +27,8 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
         list[i]["United States"] = list[i]["U.S."];
         list[i]["Europe/Australia"] = list[i]["World Region Europe/Australia"];
         list[i]["Spring"] = list[i]["Semester of Scholarship Duration Spring"];
-        list[i]["Open to Men"] = list[i]["Gender Specific Open to Men"];
+        list[i]["Open to Men and Women"] = list[i]["Gender Specific Open to Men"] && list[i]["Open to Women"];
+        list[i]["Only open to Women"] = list[i]["Open to Women"] && !list[i]["Gender Specific Open to Men"]
         list[i]["Citizenship required"] = list[i]["U.S. Citizen Req."];
         list[i]["Citizenship not required"] = !list[i]["U.S. Citizen Req."];
         list[i]["Financial need required"] = list[i]["Financial Need Required?"];

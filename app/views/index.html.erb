@@ -76,7 +76,7 @@
           </div>
           <div class="col-sm-3">
             <h5>Gender</h5>
-            <select class="selectpicker" ng-model="filters.genders" title="Any" ng-options="gender as gender for gender in genders" multiple></select>
+            <select class="selectpicker" ng-model="filters.genders" title="Either" ng-options="gender as gender for gender in genders" multiple></select>
           </div>
           <div class="col-sm-3">
             <h5>US Citizenship</h5>
@@ -90,9 +90,7 @@
       </div>
     </div>
 
-    <div ng-hide="scholarships">
-      <%= image_tag("ring.svg", alt: "Loading Animation", width: "15%", class: "loading-ring") %>
-    </div>
+    <div class='uil-ring-css loading-ring' style='-webkit-transform:scale(0.65)' ng-hide="scholarships"><div></div></div>
 
     <div class="container">
       <table class="table table-striped master-list" ng-show="scholarships">
