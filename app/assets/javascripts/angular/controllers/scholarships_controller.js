@@ -1,6 +1,7 @@
 angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
   $scope.searchType = "Advanced"
+  $scope.expandhide = "Expand"
   $scope.filters = {studentTypes: [], areasOfStudy: [], purposes: [], regions: [], seasons: [], genders: [], citizenships: [], financialNeeds: []};
   $scope.studentTypes = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad Student', 'Alumni'];
   $scope.areasOfStudy = ['Natural Science', 'Social Science', 'Humanities', 'Education', 'Math and Technology', 'Health Disciplines', 'Law', 'Fine and Performing Arts'];
@@ -48,7 +49,14 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
       $scope.searchType = "Advanced"
       clearFilters();
     }
-  }
+  };
+
+  $scope.toggleExpansions = function () {
+    $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
+    for (i in $scope.scholarships){
+      $scope.scholarships[i]['expand'] = !$scope.scholarships[i]['expand'];
+    }
+  };
 
   $scope.$watch("filters", function(newValue, oldValue) {
     if ($scope.originalList) {
@@ -77,7 +85,7 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
       }
     }
     return temp;
-  }
+  };
 
   clearFilters = function () {
     $scope.savedFilters = angular.copy($scope.filters);
@@ -86,10 +94,10 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
         $scope.filters[filterType] = [];
       }
     }
-  }
+  };
 
   restoreFilters = function () {
     $scope.filters = $scope.savedFilters;
-  }
+  };
 
 }]);
