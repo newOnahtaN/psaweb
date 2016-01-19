@@ -101,8 +101,8 @@
             <th style="white-space: nowrap;">External Link</th>
           </tr>
         </thead>
-        <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search">
-          <tr class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
+        <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search | orderBy:'-title':true">
+          <tr ng-if="scholarship.title" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
             <td>{{::scholarship.title}}</td>
             <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
           </tr>
