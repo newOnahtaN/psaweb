@@ -23,6 +23,7 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
     for(i = 0; i < list.length; i++){
         list[i].title = list[i]["Scholarship/Fellowship Title"];
         list[i].link = list[i]["External Website Link"];
+        list[i].wm_link = list[i]["Internal Link"];
         list[i]["Freshman"] = list[i]["Applying as a: Freshman"];
         list[i]["Natural Science"] = list[i]["Area of Study Science/Enviro"];
         list[i]["United States"] = list[i]["U.S."];
