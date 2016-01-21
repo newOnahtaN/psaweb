@@ -22,6 +22,10 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   function refineMasterList(list) {
     for(i = 0; i < list.length; i++){
         list[i].title = list[i]["Scholarship/Fellowship Title"];
+        list[i].sortable_title = list[i]["Scholarship/Fellowship Title"];
+        if (list[i].sortable_title) {
+          list[i].sortable_title = list[i].sortable_title.replace("The ", "");
+        }
         list[i].link = list[i]["External Website Link"];
         list[i].wm_link = list[i]["Internal Link"];
         list[i]["Freshman"] = list[i]["Applying as a: Freshman"];
