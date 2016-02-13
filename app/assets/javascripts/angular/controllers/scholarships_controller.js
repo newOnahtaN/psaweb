@@ -1,6 +1,6 @@
 angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
-  $scope.searchType = "Advanced"
+  $scope.searchType = "More"
   $scope.expandhide = "Expand"
   $scope.filters = {studentTypes: [], areasOfStudy: [], purposes: [], regions: [], seasons: [], genders: [], citizenships: [], financialNeeds: []};
   $scope.studentTypes = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad Student', 'Alumni'];
@@ -47,11 +47,11 @@ angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsCo
   }
 
   $scope.toggleSearchType = function () {
-    if ($scope.searchType === "Advanced"){
-      $scope.searchType = "Basic"
+    if ($scope.searchType === "More"){
+      $scope.searchType = "Less"
       restoreFilters();
     } else {
-      $scope.searchType = "Advanced"
+      $scope.searchType = "More"
       clearFilters();
     }
   };
