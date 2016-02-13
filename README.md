@@ -1,5 +1,3 @@
-# Ruby on Rails Tutorial: "hello, world!"
+##Scholarship Search 
 
-This is the first application for the
-[*Ruby on Rails Tutorial*](http://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
+This application filters data from a particular google sheets document into a single page web application found at psaweb.herokuapp.com in order to help college students find scholarships of all kinds.
