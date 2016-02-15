@@ -19,126 +19,128 @@
 
     <div class="header-divider"></div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-2 hidden-sm hidden-xs psa-logo"><%= image_tag("psas_small.png", alt: "Peer Scholarship Advisors Logo", width: "100%", class: "") %></div>
-        <div class="col-xs-12 col-sm-12 col-md-8">
-          <h1 class="title text-center">Scholarship Search</h1>
-          <h4 class="sub-title text-center">Presented by the The Charles Center Peer Scholarship Advisors <br> at William and Mary</h4>
-        </div>
-        <div class="col-xs-2 hidden-sm hidden-xs wm-logo"><%= image_tag("wm_small.png", alt: "William and Mary Logo", width: "100%", class: "") %></div>
-      </div>
-    </div>
-    <div class="header"></div>
-    <div class="header-divider header-divider-bottom"></div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-1"></div>
-        <div class="col-xs-10">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for Scholarships" ng-model="search">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button" ng-click="toggleSearchType()">{{searchType}} Options</button>
-            </span>
-          </div>
-        </div>
-        <div class="col-xs-1"></div>
-      </div>
-    </div>
-
-    <div ng-show="searchType === 'Less'">
+    <div class="list-body">
       <div class="container">
-        <div class="row first-row">
-          <div class="col-sm-3">
-            <h5>Academic Status</h5>
-            <select class="selectpicker" ng-model="filters.studentTypes" title="Any" ng-options="type as type for type in studentTypes" multiple></select>
+        <div class="row">
+          <div class="col-xs-2 hidden-sm hidden-xs psa-logo"><%= image_tag("psas_small.png", alt: "Peer Scholarship Advisors Logo", width: "100%", class: "") %></div>
+          <div class="col-xs-12 col-sm-12 col-md-8">
+            <h1 class="title text-center">Scholarship Search</h1>
+            <h4 class="sub-title text-center">Presented by the The Charles Center Peer Scholarship Advisors <br> at William and Mary</h4>
           </div>
-          <div class="col-sm-3">
-            <h5>Area of Study</h5>
-            <select class="selectpicker" ng-model="filters.areasOfStudy" title="Any" ng-options="area as area for area in areasOfStudy" multiple></select>
-          </div>
-          <div class="col-sm-3">
-            <h5>Scholarship Purpose</h5>
-            <select class="selectpicker" ng-model="filters.purposes" title="Any" ng-options="purpose as purpose for purpose in purposes" multiple></select>
-          </div>
-          <div class="col-sm-3">
-            <h5>World Region</h5>
-            <select class="selectpicker" ng-model="filters.regions" title="Any" ng-options="region as region for region in regions" multiple></select>
-          </div>
+          <div class="col-xs-2 hidden-sm hidden-xs wm-logo"><%= image_tag("wm_small.png", alt: "William and Mary Logo", width: "100%", class: "") %></div>
         </div>
       </div>
+      <div class="header"></div>
+      <div class="header-divider header-divider-bottom"></div>
 
       <div class="container">
-        <div class="row second-row">
-          <div class="col-sm-3">
-            <h5>Scholarship Duration</h5>
-            <select class="selectpicker" ng-model="filters.seasons" title="Any" ng-options="season as season for season in seasons" multiple></select>
+        <div class="row">
+          <div class="col-xs-1"></div>
+          <div class="col-xs-10">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for Scholarships" ng-model="search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="toggleSearchType()">{{searchType}} Options</button>
+              </span>
+            </div>
           </div>
-          <div class="col-sm-3">
-            <h5>Gender</h5>
-            <select class="selectpicker" ng-model="filters.genders" title="Either" ng-options="gender as gender for gender in genders" multiple></select>
+          <div class="col-xs-1"></div>
+        </div>
+      </div>
+
+      <div ng-show="searchType === 'Less'">
+        <div class="container">
+          <div class="row first-row">
+            <div class="col-sm-3">
+              <h5>Academic Status</h5>
+              <select class="selectpicker" ng-model="filters.studentTypes" title="Any" ng-options="type as type for type in studentTypes" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>Area of Study</h5>
+              <select class="selectpicker" ng-model="filters.areasOfStudy" title="Any" ng-options="area as area for area in areasOfStudy" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>Scholarship Purpose</h5>
+              <select class="selectpicker" ng-model="filters.purposes" title="Any" ng-options="purpose as purpose for purpose in purposes" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>World Region</h5>
+              <select class="selectpicker" ng-model="filters.regions" title="Any" ng-options="region as region for region in regions" multiple></select>
+            </div>
           </div>
-          <div class="col-sm-3">
-            <h5>US Citizenship</h5>
-            <select class="selectpicker" ng-model="filters.citizenships" title="Either" ng-options="cit as cit for cit in citizenships" multiple></select>
-          </div>
-          <div class="col-sm-3">
-            <h5>Financial Need</h5>
-            <select class="selectpicker" ng-model="filters.financialNeeds" title="Either" ng-options="fin as fin for fin in financialNeeds" multiple></select>
+        </div>
+
+        <div class="container">
+          <div class="row second-row">
+            <div class="col-sm-3">
+              <h5>Scholarship Duration</h5>
+              <select class="selectpicker" ng-model="filters.seasons" title="Any" ng-options="season as season for season in seasons" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>Gender</h5>
+              <select class="selectpicker" ng-model="filters.genders" title="Either" ng-options="gender as gender for gender in genders" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>US Citizenship</h5>
+              <select class="selectpicker" ng-model="filters.citizenships" title="Either" ng-options="cit as cit for cit in citizenships" multiple></select>
+            </div>
+            <div class="col-sm-3">
+              <h5>Financial Need</h5>
+              <select class="selectpicker" ng-model="filters.financialNeeds" title="Either" ng-options="fin as fin for fin in financialNeeds" multiple></select>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class='uil-ring-css loading-ring' style='-webkit-transform:scale(0.65)' ng-hide="scholarships"><div></div></div>
+      <div class='uil-ring-css loading-ring' style='-webkit-transform:scale(0.65)' ng-hide="scholarships"><div></div></div>
 
-    <div class="container">
-      <table class="table table-striped master-list" ng-show="scholarships">
-        <thead>
-          <tr>
-            <th><h3>Scholarship Title</h3></th>
-            <th style="white-space: nowrap;">W&amp;M Link</th>
-            <th style="white-space: nowrap;">External Link</th>
-          </tr>
-        </thead>
-        <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search | orderBy:'-sortable_title':true">
-          <tr ng-if="scholarship.title && scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
-            <td>{{::scholarship.title}}</td>
-            <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
-            <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
-          </tr>
-          <tr ng-if="scholarship['expand']" >
-            <td class="expansion" colspan="42">
-              <b>Desription:</b><br>
-              {{::scholarship['Description']}}
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="container">
+        <table class="table table-striped master-list" ng-show="scholarships">
+          <thead>
+            <tr>
+              <th><h3>Scholarship Title</h3></th>
+              <th style="white-space: nowrap;">W&amp;M Link</th>
+              <th style="white-space: nowrap;">External Link</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search | orderBy:'-sortable_title':true">
+            <tr ng-if="scholarship.title && scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
+              <td>{{::scholarship.title}}</td>
+              <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
+              <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
+            </tr>
+            <tr ng-if="scholarship['expand']" >
+              <td class="expansion" colspan="42">
+                <b>Desription:</b><br>
+                {{::scholarship['Description']}}
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Firstname</th>
+                      <th>Lastname</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>July</td>
+                      <td>Dooley</td>
+                      <td>july@example.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="footer-divider"></div>
-    <div class="footer">
-      <p>Have a question? Contact the PSAs!</p>
+    <footer class="footer">
+      <p class="psa-message">Have a question? <a class="footer-link" href="http://www.wm.edu/sites/scholarships/peerscholarshipadvisors/">Contact the PSAs!</a></p>
       <p></p>
-    </div>
+    </footer>
 
   </body>
 </html>
