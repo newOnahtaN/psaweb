@@ -78,7 +78,7 @@ html, body {
 }
 
 .master-list {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   margin-top: 20px;
 }
 
@@ -110,8 +110,13 @@ button[type="button"]:focus,
   outline: 0 none;
 }
 
+.contact-us{
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 22px
+}
+
 .footer {
-  // position: absolute;
   bottom: 0;
   width: 100%;
   height: 70px;
@@ -119,33 +124,36 @@ button[type="button"]:focus,
 }
 
 .footer-divider {
-  // position: absolute;
-  // bottom: 60px;
   width: 100%;
-  height: 7px;
+  height: 5px;
   background-color: #B9975B;
-  margin-bottom: -10px;
-}
-
-.psa-message {
-  float: left;
-  color: #ffffff !important;
-  padding-top: 24px;
-  padding-left: 21px;
 }
 
 .footer-link {
   color: #ffffff;
   text-decoration: underline;
 }
+
 .footer-link:hover{
   color: #ffffff;
 }
 
+.psa-message {
+  float: left;
+  color: #ffffff;
+  padding-top: 24px;
+  padding-left: 15px;
+}
+
 .charles-center-message {
-  padding-top: 20px;
+  padding-top: 23px;
   float: right;
   color: #ffffff;
+  padding-right: 15px;
+}
+
+.line {
+  border-top: 3px solid #eee;
 }
 
 /* Override Bootstrap 3 font locations */
