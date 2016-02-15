@@ -1,4 +1,7 @@
-angular.module("PSAScholarships", ['angular.filter', 'ngAnimate']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
+var app = angular.module("PSAScholarships", ['angular.filter', 'ngAnimate'])
+
+
+app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
   $scope.searchType = "More"
   $scope.expandhide = "Expand"
@@ -106,7 +109,11 @@ angular.module("PSAScholarships", ['angular.filter', 'ngAnimate']).controller('S
     $scope.filters = $scope.savedFilters;
   };
 
-}]).animation('.trSlide', [function() {
+}])
+
+
+
+app.animation('.trSlide', [function() {
   var shrinkyItems=[]; 
   var speedUp=6;
   var speedDown=3;
