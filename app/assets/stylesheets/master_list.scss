@@ -21,7 +21,7 @@ html, body {
   height: 100%;
 }
 
-.list-body{
+.list-body {
   position: relative;
   min-height: 100%;
 }
@@ -85,6 +85,31 @@ html, body {
 .scholarship:hover {
   cursor: pointer;
   background-color: #f2f2f2 !important;
+}
+
+.innershadow > td:first-child {
+  -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+}
+.innershadow > td {
+  -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+}
+.innershadow > td:last-child {
+  -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
+// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
+// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
 }
 
 .expansion{
@@ -165,3 +190,28 @@ button[type="button"]:focus,
   font-url('glyphicons-halflings-regular.ttf') format('truetype'),
   font-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+
+// .slide.ng-enter, .slide.ng-leave {
+//   -webkit-transition:0.5s linear all;
+//   transition:0.5s linear all;
+// }
+
+// .slide.ng-enter {  }        /* starting animations for enter */
+// .slide.ng-enter-active { } /* terminal animations for enter */
+// .slide.ng-leave { }        /* starting animations for leave */
+// .slide.ng-leave-active { } /* terminal animations for leave */
+// .slide.ng-enter, .slide.ng-leave {
+//   -webkit-transition: all 0.3s ease-in-out;
+//   -moz-transition: all 0.3s ease-in-out;
+//   -o-transition: all 0.3s ease-in-out;
+//   transition: all 0.3s ease-in-out;
+// }
+// .slide.ng-enter, .slide.ng-leave.ng-leave-active {
+//   line-height: 0;
+//   opacity: 0;
+// }
+// .slide.ng-leave, .slide.ng-enter.ng-enter-active {
+//   line-height: 30px;
+//   opacity: 1;
+// }

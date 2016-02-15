@@ -1,4 +1,4 @@
-angular.module("PSAScholarships", ['angular.filter']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
+angular.module("PSAScholarships", ['angular.filter', 'ngAnimate']).controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
   $scope.searchType = "More"
   $scope.expandhide = "Expand"

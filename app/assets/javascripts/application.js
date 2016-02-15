@@ -15,5 +15,6 @@
 //= require twitter/bootstrap
 //= require angular
 //= require angular-filter
+//= require angular-animate
 //= require angular-bootstrap-select
 //= require_tree .
