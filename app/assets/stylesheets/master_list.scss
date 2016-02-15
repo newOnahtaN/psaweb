@@ -192,26 +192,7 @@ button[type="button"]:focus,
 }
 
 
-// .slide.ng-enter, .slide.ng-leave {
-//   -webkit-transition:0.5s linear all;
-//   transition:0.5s linear all;
-// }
+.slide_outer{       
+   overflow: hidden;
+}
 
-// .slide.ng-enter {  }        /* starting animations for enter */
-// .slide.ng-enter-active { } /* terminal animations for enter */
-// .slide.ng-leave { }        /* starting animations for leave */
-// .slide.ng-leave-active { } /* terminal animations for leave */
-// .slide.ng-enter, .slide.ng-leave {
-//   -webkit-transition: all 0.3s ease-in-out;
-//   -moz-transition: all 0.3s ease-in-out;
-//   -o-transition: all 0.3s ease-in-out;
-//   transition: all 0.3s ease-in-out;
-// }
-// .slide.ng-enter, .slide.ng-leave.ng-leave-active {
-//   line-height: 0;
-//   opacity: 0;
-// }
-// .slide.ng-leave, .slide.ng-enter.ng-enter-active {
-//   line-height: 30px;
-//   opacity: 1;
-// }
