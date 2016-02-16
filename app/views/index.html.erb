@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Scholarships presented by the William and Mary Peer Scholarsip Advisors">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/css/bootstrap-select.min.css"></link> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.3/js/bootstrap-select.min.js"></script> -->
     <title>PSA Scholarships</title>
 
     <%= favicon_link_tag 'favicon.ico' %>
@@ -107,7 +104,7 @@
           </thead>
           <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search | orderBy:'-sortable_title':true">
             <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
-              <td style="vertical-align:middle">{{::scholarship.title}}</td>
+              <td class="scholarship-name">{{::scholarship.title}}</td>
               <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
               <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
             </tr>

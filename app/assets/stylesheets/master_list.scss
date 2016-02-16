@@ -91,6 +91,11 @@ html, body {
   background-color: #f2f2f2 !important;
 }
 
+.scholarship-name {
+  word-wrap: break-word;
+  vertical-align: middle;
+}
+
 .innershadow > td:first-child {
   -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
