@@ -58,6 +58,10 @@ html, body {
   margin-bottom: 47px;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .first-row {
   margin-top: 40px;
 }
@@ -91,25 +95,16 @@ html, body {
   -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
-// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
 }
 .innershadow > td {
   -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
-// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
 }
 .innershadow > td:last-child {
   -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
-// -webkit-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// -moz-box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
-// box-shadow: inset 0px 24px 15px -27px rgba(0,0,0,0.75);
 }
 
 .expansion{
@@ -191,8 +186,16 @@ button[type="button"]:focus,
   font-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-
+//Animations
 .slide_outer{       
    overflow: hidden;
+}
+
+.ng-hide.ng-hide-animate{
+     display: none !important;
+}
+
+td {
+    background-clip: padding-box;
 }
 

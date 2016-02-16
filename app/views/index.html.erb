@@ -15,11 +15,11 @@
     <%= csrf_meta_tags %>
 
   </head>
-  <body ng-controller="ScholarshipsController" ng-class="page">
+  <body class="page">
 
     <div class="header-divider"></div>
 
-    <div class="list-body">
+    
       <div class="container">
         <div class="row">
           <div class="col-xs-2 hidden-sm hidden-xs psa-logo"><%= image_tag("psas_small.png", alt: "Peer Scholarship Advisors Logo", width: "100%", class: "") %></div>
@@ -32,6 +32,8 @@
       </div>
       <div class="header"></div>
       <div class="header-divider header-divider-bottom"></div>
+
+    <div class="list-body" ng-controller="ScholarshipsController">
 
       <div class="container">
         <div class="row">
@@ -48,7 +50,7 @@
         </div>
       </div>
 
-      <div ng-show="searchType === 'Less'">
+      <div ng-class="{hidden: searchType != 'Less'}">
         <div class="container">
           <div class="row first-row">
             <div class="col-sm-3">

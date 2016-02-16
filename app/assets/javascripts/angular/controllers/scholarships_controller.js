@@ -116,8 +116,6 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     return check;
   };
 
-  $scope.mobilecheck();
-
 }]);
 
 
@@ -125,7 +123,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 app.animation('.trSlide', [function() {
   var shrinkyItems=[]; 
   var speedUp=6;
-  var speedDown=3;
+  var speedDown=6;
   
   function initShrinky(element, direction, doneFn){ 
     var child=element.getElementsByTagName('div')[0];
