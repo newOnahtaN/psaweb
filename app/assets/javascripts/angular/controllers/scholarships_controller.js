@@ -50,15 +50,15 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     return list;
   }
 
-  $scope.toggleSearchType = function () {
-    if ($scope.searchType === "More"){
-      $scope.searchType = "Less"
-      restoreFilters();
-    } else {
-      $scope.searchType = "More"
-      clearFilters();
-    }
-  };
+  // $scope.toggleSearchType = function () {
+  //   if ($scope.searchType === "More"){
+  //     $scope.searchType = "Less"
+  //     restoreFilters();
+  //   } else {
+  //     $scope.searchType = "More"
+  //     clearFilters();
+  //   }
+  // };
 
   $scope.toggleExpansions = function () {
     $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
