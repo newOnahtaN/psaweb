@@ -103,7 +103,7 @@
               <th>External Link</th>
             </tr>
           </thead>
-          <tbody ng-repeat="scholarship in scholarships | fuzzyBy: 'title': search | orderBy:'-sortable_title':true">
+          <tbody ng-repeat="scholarship in scholarships | orderBy:'-sortable_title':true">
             <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
               <td class="scholarship-name">{{::scholarship.title}}</td>
               <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
@@ -131,7 +131,7 @@
                         </tr>
                       </tbody>
                     </table> -->
-                    
+
                   </div>
                 </div>
               </td>
