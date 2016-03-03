@@ -1,6 +1,5 @@
 var app = angular.module("PSAScholarships", ['angular.filter', 'ngAnimate'])
 
-
 app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
 
   $scope.searchType = "More"
@@ -49,16 +48,6 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
     return list;
   }
-
-  // $scope.toggleSearchType = function () {
-  //   if ($scope.searchType === "More"){
-  //     $scope.searchType = "Less"
-  //     restoreFilters();
-  //   } else {
-  //     $scope.searchType = "More"
-  //     clearFilters();
-  //   }
-  // };
 
   $scope.toggleExpansions = function () {
     $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
