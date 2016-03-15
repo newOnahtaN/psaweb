@@ -75,29 +75,31 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   }, true);
 
-  //   $scope.$watch("filters", function(newValue, oldValue) {
-  //   if ($scope.originalList) {
-  //     filters = allFilters();
-  //     console.log(filters);
-  //     scholarships = angular.copy($scope.originalList)
-  //     i = scholarships.length
-  //     while (i-- && filters.length > 0) {
-  //       removeScholarship = true;
-  //       scholarship = scholarships[i];
-  //       for (j in filters){
-  //         filter = filters[j];
-  //         if (scholarship[filter]) {
-  //           removeScholarship = false;
-  //           break;
-  //         }
-  //       }
-  //       if (removeScholarship){
-  //         scholarships.splice(i,1);
-  //       }
-  //     }
-  //     $scope.scholarships = scholarships;
-  //   }
-  // }, true);
+
+
+//   $scope.$watch("filters", function(newValue, oldValue) {
+//   if ($scope.originalList) {
+//     filters = allFilters();
+//     console.log(filters);
+//     scholarships = angular.copy($scope.originalList)
+//     i = scholarships.length
+//     while (i-- && filters.length > 0) {
+//       removeScholarship = true;
+//       scholarship = scholarships[i];
+//       for (j in filters){
+//         filter = filters[j];
+//         if (scholarship[filter]) {
+//           removeScholarship = false;
+//           break;
+//         }
+//       }
+//       if (removeScholarship){
+//         scholarships.splice(i,1);
+//       }
+//     }
+//     $scope.scholarships = scholarships;
+//   }
+// }, true);
 
   allFilters = function () {
     temp = []
