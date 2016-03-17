@@ -101,15 +101,15 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 //   }
 // }, true);
 
-  allFilters = function () {
-    temp = []
-    for (var filterType in $scope.filters) {
-      if ($scope.filters.hasOwnProperty(filterType)) {
-        temp = temp.concat($scope.filters[filterType]);
-      }
-    }
-    return temp;
-  };
+  // allFilters = function () {
+  //   temp = []
+  //   for (var filterType in $scope.filters) {
+  //     if ($scope.filters.hasOwnProperty(filterType)) {
+  //       temp = temp.concat($scope.filters[filterType]);
+  //     }
+  //   }
+  //   return temp;
+  // };
 
   clearFilters = function () {
     $scope.savedFilters = angular.copy($scope.filters);
