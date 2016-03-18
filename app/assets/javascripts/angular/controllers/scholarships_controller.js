@@ -76,7 +76,6 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
   }, true);
 
 
-
 //   $scope.$watch("filters", function(newValue, oldValue) {
 //   if ($scope.originalList) {
 //     filters = allFilters();
