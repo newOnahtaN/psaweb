@@ -14,7 +14,6 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
   $scope.citizenships = ["Citizenship required", "Citizenship not required"];
   $scope.financialNeeds = ["Financial need required", "Financial need not required"];
 
-
   $http.get('/MasterList').success(function(response) {
     master_list = refineMasterList(response)
     $scope.originalList = master_list;
