@@ -13,13 +13,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 4.0.3'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.2.3'
-# bundle exec rake doc:rails generates the API under doc/api.
+gem 'jquery-rails', '~> 4.0.3' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder gem 'jbuilder', '~> 2.2.3' # bundle exec rake doc:rails generates the API under doc/api.  gem 'sdoc', '~> 0.4.0', group: :doc gem 'angularjs-rails' gem 'twitter-bootstrap-rails' gem 'certified' gem 'pry-nav', group: [:development, :test] gem 'google-api-client'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'angularjs-rails'
-gem 'twitter-bootstrap-rails'
 gem 'certified'
 gem 'pry-nav', group: [:development, :test]
 gem 'google-api-client'
@@ -32,15 +28,17 @@ gem 'google-drive'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
-  gem 'spring',      '1.1.3'
+  #gem 'spring',      '1.1.3'
 end
 
 group :production do
-  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
