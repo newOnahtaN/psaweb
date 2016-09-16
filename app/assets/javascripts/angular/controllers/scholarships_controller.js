@@ -55,6 +55,8 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   };
 
+
+//AND version of filtering
   $scope.$watch("filters", function(newValue, oldValue) {
     if ($scope.originalList) {
       filters = allFilters();
@@ -74,7 +76,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   }, true);
 
-
+//OR version of filtering
 //   $scope.$watch("filters", function(newValue, oldValue) {
 //   if ($scope.originalList) {
 //     filters = allFilters();
@@ -97,17 +99,18 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 //     }
 //     $scope.scholarships = scholarships;
 //   }
-// }, true);
+// }, true
 
-  // allFilters = function () {
-  //   temp = []
-  //   for (var filterType in $scope.filters) {
-  //     if ($scope.filters.hasOwnProperty(filterType)) {
-  //       temp = temp.concat($scope.filters[filterType]);
-  //     }
-  //   }
-  //   return temp;
-  // };
+
+  allFilters = function () {
+    temp = []
+    for (var filterType in $scope.filters) {
+      if ($scope.filters.hasOwnProperty(filterType)) {
+        temp = temp.concat($scope.filters[filterType]);
+      }
+    }
+    return temp;
+  };
 
   clearFilters = function () {
     $scope.savedFilters = angular.copy($scope.filters);
