@@ -12,13 +12,17 @@ class MasterListController < ApplicationController
 
   def clean_response response
     cleaned = JSON.parse(response[47..-3]) #remove callback function
-    rearrange_scholarships(cleaned)
+    binding.pry
+    rearrange_scholarships(cleaned) 
   end
 
   def rearrange_scholarships hash
     columns = hash["table"]["cols"].map {|col| col["label"].strip}
+    binding.pry
     rows = hash["table"]["rows"].map {|row| row["c"].map{|val| true_or_false(val.try(:[],"v"))}}
+    binding.pry
     master_list = rows.map {|row| Hash[columns.zip row]}
+    binding.pry
   end
 
   def true_or_false val
