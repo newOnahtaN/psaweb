@@ -17,22 +17,21 @@ class MasterListController < ApplicationController
   end
 
   def rearrange_scholarships hash
-    columns = hash["table"]["cols"].map {|col| col["label"].strip}
-    binding.pry
-    rows = hash["table"]["rows"].map {|row| row["c"].map{|val| true_or_false(val.try(:[],"v"))}}
-    binding.pry
-    master_list = rows.map {|row| Hash[columns.zip row]}
-    binding.pry
+    #insert your code here
+    #Give two lists inside a bigger list
+    #The first list should be all the Column Names that correspond the the column names on the google sheet here:
+    #The second list should just the names of every single one of the scholarships
+    # reference my code at https://github.com/newOnahtaN/psaweb/blob/master/app/controllers/master_list_controller.rb if you need help
   end
 
-  def true_or_false val
-    if val && val.try(:downcase) == "y"
-      return true
-    elsif val && val.try(:downcase) == "n"
-      return false
-    else
-      return val
-    end
-  end
+  # def true_or_false val
+  #   if val && val.try(:downcase) == "y"
+  #     return true
+  #   elsif val && val.try(:downcase) == "n"
+  #     return false
+  #   else
+  #     return val
+  #   end
+  # end
 
 end
