@@ -93,8 +93,35 @@
               <td class="expansion" colspan="42">
                 <div class='slide_outer'>
                   <div>
-                    <b>Description:</b><br>
-                    {{::scholarship['Description']}}
+					<div class ="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<b>Description:</b>
+                    			<span class="characteristics">{{::scholarship['Description']}}</span><br>
+							</div>
+						</div>
+					</div>
+					<div class ="container">
+						<div class="row">
+							<div class="col-sm-6">
+                    			<b>Academic Status:</b>
+								<span class="characteristics">{{::stringFromAttributes(scholarship, studentTypes)}}</span><br>
+                    			<b>Area of Study:</b>
+								<span class="characteristics">{{::stringFromAttributes(scholarship, areasOfStudy)}}</span><br>
+                    			<b>Scholarship Purpose:</b>
+								<span class="characteristics">{{::undefToNotSpecified(stringFromAttributes(scholarship, purposes))}}</span><br>
+                    			<b>Region:</b>
+								<span class="characteristics">{{::stringFromAttributes(scholarship, regions)}}</span><br>
+							</div>
+							<div class="col-sm-6">
+                    			<b>Season:</b>
+								<span class="characteristics">{{::stringFromAttributes(scholarship, seasons)}}</span><br>
+                    			<b>Citizenship Required:</b><span class="characteristics">{{::trueToYes(scholarship["Citizenship required"])}}</span><br>
+								<b>Financial Need Required:</b><span class="characteristics">{{::trueToYes(scholarship["Financial need required"])}}</span><br>
+								<b>Open To Both Men And Women:</b><span class="characteristics">{{::trueToYes(scholarship["Open to Men and Women"])}}</span>
+							</div>
+						</div>
+					</div>
                   </div>
                 </div>
               </td>

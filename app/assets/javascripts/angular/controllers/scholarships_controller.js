@@ -47,6 +47,43 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
     return list;
   }
+  
+  //Abby's code
+  $scope.stringFromAttributes = function(schol, attributesArray){
+  	var scholarship_attributes_as_strings = [];
+    for(m=0; m<attributesArray.length; m++) {
+  		if(schol[attributesArray[m]]) {
+  			scholarship_attributes_as_strings.push(attributesArray[m]);
+  		}
+  	}
+  	var asString = "";
+  	for(j=0; j<(scholarship_attributes_as_strings.length - 1); j++) {
+  		asString = asString.concat(scholarship_attributes_as_strings[j] + ", ");
+  	}
+  	asString = asString.concat(scholarship_attributes_as_strings[scholarship_attributes_as_strings.length - 1]);
+  	return asString;
+	
+  };
+  
+  $scope.trueToYes = function(char) {
+	  if(char == true) {
+		  return " Yes";
+	  }
+	  else {
+		  return " No";
+	  }
+  }
+  
+  $scope.undefToNotSpecified = function(response) {
+	  if(response == "undefined") {
+		  return "Not Specified";
+	  }
+	  else {
+		  return response;
+	  }
+  }
+  
+  //End Abby's code
 
   $scope.toggleExpansions = function () {
     $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
