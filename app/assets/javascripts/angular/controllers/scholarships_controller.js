@@ -1,3 +1,4 @@
+
 var app = angular.module("PSAScholarships", ['angular.filter', 'ngAnimate'])
 
 app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $http){
@@ -30,6 +31,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
         list[i].link = list[i]["External Website Link"];
         list[i].display = list[i]["Display on Webpage?"] && list[i].title
         list[i].wm_link = list[i]["Internal Link"];
+        list[i].areasOfStudy = list[i]["Areas of Study"];
         list[i]["Freshman"] = list[i]["Applying as a: Freshman"];
         list[i]["Natural Science"] = list[i]["Area of Study Science/Enviro"];
         list[i]["United States"] = list[i]["U.S."];
@@ -42,10 +44,51 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
         list[i]["Financial need required"] = list[i]["Financial Need Required?"];
         list[i]["Financial need not required"] = !list[i]["Financial Need Required?"];
         list[i]["Graduate/Postgrad Study"] = list[i]["Purpose Graduate/Postgrad Study"];
+        console.log(list[i]["Award Amount"]);
         delete list[i]["Scholarship/Fellowship Title"];
         delete list[i]["External Website Link"];
     }
     return list;
+  }
+  $scope.stringFromAttributes = function(schol, attributesArray){
+  var scholarship_attributes_as_strings = [];
+  for(m=0; m<attributesArray.length; m++) {
+    if(schol[attributesArray[m]]) {
+      scholarship_attributes_as_strings.push(attributesArray[m]);
+    }
+  }
+  var asString = "";
+  for(j=0; j<(scholarship_attributes_as_strings.length - 1); j++) {
+    asString = asString.concat(scholarship_attributes_as_strings[j] + ", ");
+  }
+  asString = asString.concat(scholarship_attributes_as_strings[scholarship_attributes_as_strings.length - 1]);
+  return asString;
+
+};
+
+$scope.trueToYes = function(char) {
+ if(char == true) {
+   return " Yes";
+ }
+ else {
+   return " No";
+ }
+}
+
+$scope.undefToNotSpecified = function(response) {
+ if(response == "undefined") {
+   return "Not Specified";
+ }
+ else {
+   return response;
+ }
+}
+
+$scope.toggleColor = false;
+
+  $scope.alertpage = function () {
+
+    alert("Message");
   }
 
   $scope.toggleExpansions = function () {
@@ -134,13 +177,13 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
 
 app.animation('.trSlide', [function() {
-  var shrinkyItems=[]; 
+  var shrinkyItems=[];
   var speedUp=6;
   var speedDown=6;
-  
-  function initShrinky(element, direction, doneFn){ 
+
+  function initShrinky(element, direction, doneFn){
     var child=element.getElementsByTagName('div')[0];
-    var targetHeight=direction=="up"?0 : child.offsetHeight; 
+    var targetHeight=direction=="up"?0 : child.offsetHeight;
     var currentHeight = direction=="up"?child.offsetHeight:0;
     var id=shrinkyItems.push({
       element:element,
@@ -155,11 +198,11 @@ app.animation('.trSlide', [function() {
   element.style.height=(currentHeight)+"px";
 
 setTimeout(function(){
-  shrinky(id-1); 
+  shrinky(id-1);
 });
 }
 
-function shrinky(id){ 
+function shrinky(id){
   var item=shrinkyItems[id];
   var heightChange=item.currentHeight<item.targetHeight?speedDown:-speedUp;
   item.currentHeight+=heightChange;
@@ -174,8 +217,8 @@ function shrinky(id){
   }
   else{
     setTimeout(function(){
-      shrinky(id); 
-    }); 
+      shrinky(id);
+    });
   }
 }
 
