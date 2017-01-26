@@ -74,7 +74,11 @@ GEM
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+<<<<<<< HEAD
     google-api-client (0.9.19)
+=======
+    google-api-client (0.9.20)
+>>>>>>> f594c9e61d528a49734ac2e1a1865fdccd1b189b
       addressable (~> 2.3)
       googleauth (~> 0.5)
       httpclient (~> 2.7)
@@ -177,7 +181,11 @@ GEM
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
     public_suffix (2.0.4)
+<<<<<<< HEAD
     rack (1.6.4)
+=======
+    rack (1.6.5)
+>>>>>>> f594c9e61d528a49734ac2e1a1865fdccd1b189b
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.4.2)
