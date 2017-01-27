@@ -8,7 +8,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
   $scope.studentTypes = ['Freshman', 'Sophomore', 'Junior', 'Senior', 'Grad Student', 'Alumni'];
   $scope.areasOfStudy = ['Natural Science', 'Social Science', 'Humanities', 'Education', 'Math and Technology', 'Health Disciplines', 'Law', 'Fine and Performing Arts'];
   $scope.purposes = ['Graduate/Postgrad Study', 'International Study, Research, or Internships', 'Public Service', 'Undergraduate Tuition', 'Job Placement/Funding', 'Language'];
-  $scope.regions = ['Europe/Australia', 'United States', 'Americas (not U.S.)', 'Africa', 'Asia'];
+  $scope.regions = ['Europe/Australia', 'United States', 'Americas (not U.S.)', 'Africa', 'Middle East', 'Asia'];
   $scope.seasons = ['Spring', 'Summer', 'Fall'];
   $scope.genders = ['Open to Men and Women', 'Only open to Women'];
   $scope.citizenships = ["Citizenship required", "Citizenship not required"];
