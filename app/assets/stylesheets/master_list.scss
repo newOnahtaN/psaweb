@@ -12,7 +12,6 @@
          font-url('lato-regular.svg#latoregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 * { font-family: 'latoregular'; }
@@ -38,6 +37,14 @@ html, body {
 
 .header-divider-bottom {
   margin-bottom: 40px;
+}
+
+.col-sm-6 {
+	line-height: 18pt;
+}
+
+.col-sm-12 {
+	margin-bottom: 16px;
 }
 
 .wm-logo {
@@ -98,6 +105,10 @@ html, body {
 .scholarship-name {
   word-wrap: break-word;
   vertical-align: middle;
+}
+
+.characteristics {
+  color: gray;
 }
 
 .innershadow > td:first-child {
@@ -196,7 +207,7 @@ button[type="button"]:focus,
 }
 
 //Animations
-.slide_outer{       
+.slide_outer{
    overflow: hidden;
 }
 
@@ -207,4 +218,3 @@ button[type="button"]:focus,
 td {
     background-clip: padding-box;
 }
-

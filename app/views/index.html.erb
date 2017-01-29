@@ -13,12 +13,13 @@
 
   </head>
   <body class="page">
+
     <div class="header-divider"></div>
       <div class="container">
         <div class="row">
           <div class="col-xs-2 hidden-sm hidden-xs psa-logo"><%= image_tag("psas_small.png", alt: "Peer Scholarship Advisors Logo", width: "100%", class: "") %></div>
           <div class="col-xs-12 col-sm-12 col-md-8">
-            <h1 class="title text-center">Scholarship Search</h1>
+            <h1 class="title text-center" id="title">Scholarship Search</h1>
             <h4 class="sub-title text-center">Presented by the The Charles Center Peer Scholarship Advisors <br> at William and Mary</h4>
           </div>
           <div class="col-xs-2 hidden-sm hidden-xs wm-logo"><%= image_tag("wm_small.png", alt: "William and Mary Logo", width: "100%", class: "") %></div>
@@ -28,7 +29,6 @@
       <div class="header-divider header-divider-bottom"></div>
 
     <div class="list-body" ng-controller="ScholarshipsController">
-      <div>
         <div class="container">
           <h4 class="intro-text">
               This open resource is presented by the <a href="http://www.wm.edu/sites/scholarships/">Peer Scholarship Advisors</a> of the <a href="http://www.wm.edu/as/charlescenter/">Roy R. Charles Center for Academic Excellence</a> at the <a href="http://www.wm.edu/">College of William and Mary</a>. The list includes internal and external scholarships, fellowships, grants, internships, and research opportunities for which students and alumni of the College are eligible.<br><br>
@@ -74,7 +74,6 @@
             </div>
           </div>
         </div>
-      </div>
 
       <div class='uil-ring-css loading-ring' style='-webkit-transform:scale(0.65)' ng-hide="scholarships"><div></div></div>
 
@@ -88,7 +87,7 @@
             </tr>
           </thead>
           <tbody ng-repeat="scholarship in scholarships | orderBy:'-sortable_title':true">
-            <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']">
+            <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']; toggleColor = !toggleColor">
               <td class="scholarship-name">{{::scholarship.title}}</td>
               <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
               <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
@@ -96,9 +95,38 @@
             <tr ng-if="scholarship['expand']" class="innershadow" ng-class="{trSlide: !mobilecheck()}">
               <td class="expansion" colspan="42">
                 <div class='slide_outer'>
-                  <div>
-                    <b>Description:</b><br>
-                    {{::scholarship['Description']}}
+                  <div class ="container">
+                    <div class="row">
+                      <div class="col-sm-12">
+  					            <b>Description:</b>
+                    	  <span class="characteristics">{{::scholarship['Description']}}</span>
+                      </div>
+                    </div>
+      				      <div class="row">
+  					          <div class="col-sm-4">
+                      	<b>Academic Status:</b>
+  							        <span class="characteristics">{{::stringFromAttributes(scholarship, studentTypes)}}</span><br>
+                      	<b>Area of Study:</b>
+  							        <span class="characteristics">{{::stringFromAttributes(scholarship, areasOfStudy)}}</span><br>
+                      	<b>Scholarship Purpose:</b>
+  								      <span class="characteristics">{{::undefToNotSpecified(stringFromAttributes(scholarship, purposes))}}</span><br>
+                      </div>
+                      <div class="col-sm-4">
+                        <b>Region:</b>
+  							        <span class="characteristics">{{::stringFromAttributes(scholarship, regions)}}</span><br>
+                      	<b>Season:</b>
+  						        	<span class="characteristics">{{::stringFromAttributes(scholarship, seasons)}}</span><br>
+                      	<b>Citizenship Required:</b><span class="characteristics">{{::trueToYes(scholarship["Citizenship required"])}}</span><br>
+                      </div>
+                      <div class="col-sm-4">
+  						          <b>Financial Need Required:</b>
+                        <span class="characteristics">{{::trueToYes(scholarship["Financial need required"])}}</span><br>
+  					            <b>Open To Both Men And Women:</b>
+                        <span class="characteristics">{{::trueToYes(scholarship["Open to Men and Women"])}}</span><br>
+                        <b>Award Amount:</b>
+  						          <span class="characteristics">{{::undefToNotSpecified(scholarship["Award Amount"])}}</span><br>
+  				            </div>
+					          </div>
                   </div>
                 </div>
               </td>
