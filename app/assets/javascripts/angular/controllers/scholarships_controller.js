@@ -44,14 +44,12 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
         list[i]["Financial need required"] = list[i]["Financial Need Required?"];
         list[i]["Financial need not required"] = !list[i]["Financial Need Required?"];
         list[i]["Graduate/Postgrad Study"] = list[i]["Purpose Graduate/Postgrad Study"];
-        console.log(list[i]["Award Amount"]);
         delete list[i]["Scholarship/Fellowship Title"];
         delete list[i]["External Website Link"];
     }
     return list;
   }
-  
-  //Abby's code
+
   $scope.stringFromAttributes = function(schol, attributesArray){
   	var scholarship_attributes_as_strings = [];
     for(m=0; m<attributesArray.length; m++) {
@@ -65,28 +63,18 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
   	}
   	asString = asString.concat(scholarship_attributes_as_strings[scholarship_attributes_as_strings.length - 1]);
   	return asString;
-	
+
   };
-  
+
   $scope.trueToYes = function(char) {
-	  if(char == true) {
-		  return " Yes";
-	  }
-	  else {
-		  return " No";
-	  }
-  }
-  
+    	  return char ? "Yes" : "No";
+}
+
+
   $scope.undefToNotSpecified = function(response) {
-	  if(response == "undefined") {
-		  return "Not Specified";
-	  }
-	  else {
-		  return response;
-	  }
+    return response == "undefined" ? "Not Specified" : response;
   }
-  
-  //End Abby's code
+
 
 
 	$scope.toggleColor = false;
@@ -183,8 +171,8 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
 app.animation('.trSlide', [function() {
   var shrinkyItems=[];
-  var speedUp=6;
-  var speedDown=6;
+  var speedUp=20;
+  var speedDown=20;
 
   function initShrinky(element, direction, doneFn){
     var child=element.getElementsByTagName('div')[0];
