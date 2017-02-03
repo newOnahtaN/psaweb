@@ -111,6 +111,14 @@ html, body {
   color: gray;
 }
 
+.selected{
+  background: #eeeeee;
+  background: -webkit-linear-gradient(#eeeeee, #ffffff, #eeeeee); /* Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#eeeeee, #ffffff, #eeeeee); /* For Opera 11.6 to 12.0 */
+  background: -moz-linear-gradient(#eeeeee, #ffffff, #eeeeee); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#eeeeee, #ffffff, #eeeeee); /* Standard syntax */
+}
+
 .innershadow > td:first-child {
   -webkit-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 0px 6px 32px -17px rgba(0,0,0,0.75);
