@@ -55,6 +55,11 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   };
 
+  $scope.toggleAllExpansions = function () {
+    for (scholarship in $scope.scholarships) {
+      $scope.toggleExpansions();
+    }
+  };
 
 //AND version of filtering
   $scope.$watch("filters", function(newValue, oldValue) {
@@ -134,12 +139,12 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
 }]);
 
-
+$scope.aniSpeed=6;
 
 app.animation('.trSlide', [function() {
   var shrinkyItems=[]; 
-  var speedUp=6;
-  var speedDown=6;
+  var speedUp=$scope.aniSpeed;
+  var speedDown=$scope.aniSpeed;
   
   function initShrinky(element, direction, doneFn){ 
     var child=element.getElementsByTagName('div')[0];
