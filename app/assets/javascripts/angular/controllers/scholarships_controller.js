@@ -57,7 +57,17 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
   $scope.toggleAllExpansions = function () {
     for (scholarship in $scope.scholarships) {
-      $scope.toggleExpansions();
+      $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
+      if($scope.scholarships[0]['expand']) {
+        for (i in $scope.scholarships) {
+          $scope.scholarships[i]['expand'] = false;
+        }
+      }
+      else {
+        for (i in $scope.scholarships) {
+          $scope.scholarships[i]['expand'] = true;
+        }
+      }
     }
   };
 
