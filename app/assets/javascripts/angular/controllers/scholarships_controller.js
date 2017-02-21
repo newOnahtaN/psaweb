@@ -88,17 +88,21 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   };
 
+  var toggleButtonText;
+  $scope.toggleButtonText = "Show All Scholarship Details";
   $scope.toggleAllExpansions = function () {
     for (scholarship in $scope.scholarships) {
       $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
       if($scope.scholarships[0]['expand']) {
         for (i in $scope.scholarships) {
           $scope.scholarships[i]['expand'] = false;
+          $scope.toggleButtonText = "Show All Scholarship Details";
         }
       }
       else {
         for (i in $scope.scholarships) {
           $scope.scholarships[i]['expand'] = true;
+          $scope.toggleButtonText = "Hide All Scholarship Details";
         }
       }
     }
