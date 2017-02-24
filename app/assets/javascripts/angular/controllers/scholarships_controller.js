@@ -88,9 +88,12 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   };
 
-  var toggleButtonText;
+ 
   $scope.toggleButtonText = "Show All Scholarship Details";
+  $scope.isNotExpandingAll = true;
+
   $scope.toggleAllExpansions = function () {
+    $scope.isNotExpandingAll = false;
     for (scholarship in $scope.scholarships) {
       $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
       if($scope.scholarships[0]['expand']) {
@@ -106,6 +109,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
         }
       }
     }
+    $scope.isNotExpandingAlls = true;
   };
 
 //AND version of filtering
@@ -186,13 +190,12 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
 }]);
 
-$scope.anispeed = 20;
 
 app.animation('.trSlide', [function() {
   var shrinkyItems=[];
-  var speedUp=$scope.anispeed;
-  var speedDown=$scope.anispeed;
-
+  var speedUp = 5;
+  var speedDown = 5;
+  
   function initShrinky(element, direction, doneFn){
     var child=element.getElementsByTagName('div')[0];
     var targetHeight=direction=="up"?0 : child.offsetHeight;
@@ -216,7 +219,7 @@ setTimeout(function(){
 
 function shrinky(id){
   var item=shrinkyItems[id];
-  var heightChange=item.currentHeight<item.targetHeight?speedDown:-speedUp;
+  var heightChange = (item.currentHeight < item.targetHeight) ? speedDown : -speedUp;
   item.currentHeight+=heightChange;
   if(item.direction=="down" && item.currentHeight>item.targetHeight)
     item.currentHeight=item.targetHeight;
