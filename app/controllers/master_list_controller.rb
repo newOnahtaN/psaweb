@@ -6,7 +6,7 @@ class MasterListController < ApplicationController
 
   def master_list
     require 'open-uri'
-    response = open('https://spreadsheets.google.com/tq?key=1oxGfROK6LVhK5U62lJydSL2YFybUEk-vmOD6Q-9NYnA').read
+    response = open('https://docs.google.com/spreadsheets/d/1oxGfROK6LVhK5U62lJydSL2YFybUEk-vmOD6Q-9NYnA/gviz/tq').read
     clean_response(response)
   end
 
@@ -17,6 +17,7 @@ class MasterListController < ApplicationController
 
   def rearrange_scholarships hash
     columns = hash["table"]["cols"].map {|col| col["label"].strip}
+    binding.pry
     rows = hash["table"]["rows"].map {|row| row["c"].map{|val| true_or_false(val.try(:[],"v"))}}
     master_list = rows.map {|row| Hash[columns.zip row]}
   end
