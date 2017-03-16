@@ -17,7 +17,6 @@ class MasterListController < ApplicationController
 
   def rearrange_scholarships hash
     columns = hash["table"]["cols"].map {|col| col["label"].strip}
-    binding.pry
     rows = hash["table"]["rows"].map {|row| row["c"].map{|val| true_or_false(val.try(:[],"v"))}}
     master_list = rows.map {|row| Hash[columns.zip row]}
   end
