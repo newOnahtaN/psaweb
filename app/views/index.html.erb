@@ -98,7 +98,7 @@
             </tr>
           </thead>
           <tbody ng-repeat="scholarship in scholarships | orderBy:'-sortable_title':true">
-            <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']; toggleColor = !toggleColor">
+            <tr ng-if="::scholarship.display" class="scholarship"  ng-click="scholarship['expand'] = !scholarship['expand']; toggleColor = !toggleColor" ng-class="{'selected' : toggleColor}">
               <td class="scholarship-name">{{::scholarship.title}}</td>
               <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
               <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
