@@ -90,26 +90,23 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
 
  
   $scope.toggleButtonText = "Show All Scholarship Details";
-  $scope.isNotExpandingAll = true;
+  $scope.isExpandingAll = false;
 
   $scope.toggleAllExpansions = function () {
-    $scope.isNotExpandingAll = false;
-    for (scholarship in $scope.scholarships) {
-      $scope.expandhide = ($scope.expandhide === "Expand") ? "Hide" : "Expand"
-      if($scope.scholarships[0]['expand']) {
-        for (i in $scope.scholarships) {
-          $scope.scholarships[i]['expand'] = false;
-          $scope.toggleButtonText = "Show All Scholarship Details";
-        }
+    if (!$scope.isExpandingAll) {
+      for (i in $scope.scholarships) {
+        $scope.scholarships[i]['expand'] = true;
+        $scope.toggleButtonText = "Hide All Scholarship Details";
       }
-      else {
-        for (i in $scope.scholarships) {
-          $scope.scholarships[i]['expand'] = true;
-          $scope.toggleButtonText = "Hide All Scholarship Details";
-        }
-      }
+      $scope.isExpandingAll = true;
     }
-    $scope.isNotExpandingAlls = true;
+    else {
+      for (i in $scope.scholarships) {
+        $scope.scholarships[i]['expand'] = false;
+        $scope.toggleButtonText = "Show All Scholarship Details";
+      }
+      $scope.isExpandingAll = false;
+    }
   };
 
 //AND version of filtering

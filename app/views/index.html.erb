@@ -107,7 +107,7 @@
               <td><a target="_blank" ng-href="{{::scholarship.wm_link}}" ng-show="::scholarship.wm_link" ng-click="$event.stopPropagation()">W&amp;M info</a></td>
               <td><a target="_blank" ng-href="{{::scholarship.link}}" ng-show="::scholarship.link" ng-click="$event.stopPropagation()">more info</a></td>
             </tr>
-            <tr ng-if="scholarship['expand']" class="innershadow" ng-class="{trSlide: !mobilecheck() && isNotExpandingAll}">
+            <tr ng-if="scholarship['expand']" class="innershadow" ng-class="{trSlide: !mobilecheck() && !isExpandingAll}">
               <td class="expansion" colspan="42">
                 <div class='slide_outer'>
                   <div class ="container">
