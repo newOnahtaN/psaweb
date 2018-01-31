@@ -88,7 +88,7 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
     }
   };
 
- 
+
   $scope.toggleButtonText = "Show All Scholarship Details";
   $scope.isExpandingAll = false;
 
@@ -110,49 +110,49 @@ app.controller('ScholarshipsController', ['$scope', '$http', function($scope, $h
   };
 
 //AND version of filtering
-  $scope.$watch("filters", function(newValue, oldValue) {
-    if ($scope.originalList) {
-      filters = allFilters();
-      scholarships = angular.copy($scope.originalList)
-      i = scholarships.length
-      while (i--) {
-        scholarship = scholarships[i];
-        for (j in filters){
-          filter = filters[j];
-          if (!scholarship[filter]) {
-            scholarships.splice(i,1);
-            break;
-          }
-        }
-      }
-      $scope.scholarships = scholarships;
-    }
-  }, true);
+//  $scope.$watch("filters", function(newValue, oldValue) {
+//    if ($scope.originalList) {
+//      filters = allFilters();
+//      scholarships = angular.copy($scope.originalList)
+//      i = scholarships.length
+//      while (i--) {
+//        scholarship = scholarships[i];
+//        for (j in filters){
+//          filter = filters[j];
+//          if (!scholarship[filter]) {
+//            scholarships.splice(i,1);
+//            break;
+//          }
+//        }
+//      }
+//      $scope.scholarships = scholarships;
+//    }
+//  }, true);
 
 //OR version of filtering
-//   $scope.$watch("filters", function(newValue, oldValue) {
-//   if ($scope.originalList) {
-//     filters = allFilters();
-//     console.log(filters);
-//     scholarships = angular.copy($scope.originalList)
-//     i = scholarships.length
-//     while (i-- && filters.length > 0) {
-//       removeScholarship = true;
-//       scholarship = scholarships[i];
-//       for (j in filters){
-//         filter = filters[j];
-//         if (scholarship[filter]) {
-//           removeScholarship = false;
-//           break;
-//         }
-//       }
-//       if (removeScholarship){
-//         scholarships.splice(i,1);
-//       }
-//     }
-//     $scope.scholarships = scholarships;
-//   }
-// }, true
+   $scope.$watch("filters", function(newValue, oldValue) {
+   if ($scope.originalList) {
+     filters = allFilters();
+     console.log(filters);
+     scholarships = angular.copy($scope.originalList)
+     i = scholarships.length
+     while (i-- && filters.length > 0) {
+       removeScholarship = true;
+       scholarship = scholarships[i];
+       for (j in filters){
+         filter = filters[j];
+         if (scholarship[filter]) {
+           removeScholarship = false;
+           break;
+         }
+       }
+       if (removeScholarship){
+         scholarships.splice(i,1);
+       }
+     }
+     $scope.scholarships = scholarships;
+   }
+ }, true);
 
 
   allFilters = function () {
@@ -192,7 +192,7 @@ app.animation('.trSlide', [function() {
   var shrinkyItems=[];
   var speedUp = 5;
   var speedDown = 5;
-  
+
   function initShrinky(element, direction, doneFn){
     var child=element.getElementsByTagName('div')[0];
     var targetHeight=direction=="up"?0 : child.offsetHeight;
