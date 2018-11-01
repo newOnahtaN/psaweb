@@ -41,6 +41,6 @@ end
 group :production do
   gem 'rack-timeout'
   gem 'unicorn'
-  #gem 'pg'
+  gem 'pg'
   gem 'rails_12factor', '0.0.2'
 end
